@@ -1,0 +1,127 @@
+/* --- Core Tab Visibility Logic --- */
+.tab-content {
+  display: none;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Layout Styling --- */
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #2c3e50;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.sub-nav {
+  margin-top: 20px;
+}
+
+/* --- Interactive Elements --- */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Style secondary back buttons differently */
+button:last-of-type {
+  background-color: #95a5a6;
+}
+
+button:last-of-type:hover {
+  background-color: #7f8c8d;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* --- Generated Media Display Cards --- */
+#showsList,
+#moviesList,
+#showsDeleteList,
+#moviesDeleteList {
+  display: grid;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.media-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #3498db;
+}
+
+.media-card h3 {
+  margin: 0 0 8px 0;
+}
+
+.media-card p {
+  margin: 0 0 12px 0;
+  color: #666;
+}
+
+/* Inline card trackers button styling */
+.media-card button {
+  padding: 6px 12px;
+  font-size: 12px;
+  margin-right: 5px;
+  background-color: #2ecc71;
+}
+
+.media-card button:hover {
+  background-color: #27ae60;
+}
+
+/* Specific red style rule for dynamic deletion rows */
+.delete-row button {
+  background-color: #e74c3c;
+}
+
+.delete-row button:hover {
+  background-color: #c0392b;
+}

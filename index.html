@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Main Navigation Bar -->
+    <nav>
+      <button onclick="showTab('homePage')">Home</button>
+      <button onclick="showTab('shows')">Shows Menu</button>
+      <button onclick="showTab('movies')">Movies Menu</button>
+    </nav>
+
+    <!-- 1. HOME DASHBOARD -->
+    <div id="homePage" class="tab-content">
+      <h1>Media Tracker Dashboard</h1>
+      <p>
+        Welcome back! Use the navigation menu above to manage and keep track of
+        your library metrics.
+      </p>
+    </div>
+
+    <!-- 2. TV SHOWS MAIN MENU -->
+    <div id="shows" class="tab-content">
+      <h1>TV Shows Manager</h1>
+      <nav class="sub-nav">
+        <button onclick="showTab('logShows')">View Tracked Shows</button>
+        <button onclick="showTab('addShow')">Log New Show</button>
+        <button onclick="showTab('removeShow')">Remove a Show</button>
+      </nav>
+    </div>
+
+    <!-- 3. ADD SHOW SUB-PANEL -->
+    <div id="addShow" class="tab-content">
+      <h1>Add a TV Show</h1>
+      <input type="text" id="showName" placeholder="Show Name" />
+      <input
+        type="number"
+        id="showSeason"
+        placeholder="Current Season"
+        min="1"
+      />
+      <input
+        type="number"
+        id="showEpisode"
+        placeholder="Current Episode"
+        min="1"
+      />
+      <button onclick="saveShow()">Save Show Entry</button>
+      <button onclick="showTab('shows')">Back to Menu</button>
+    </div>
+
+    <!-- 4. VIEW LOG SHOWS SUB-PANEL -->
+    <div id="logShows" class="tab-content">
+      <h1>Your Tracked Shows</h1>
+      <div id="showsList"></div>
+      <button onclick="showTab('shows')">Back to Menu</button>
+    </div>
+
+    <!-- 5. REMOVE SHOW SUB-PANEL -->
+    <div id="removeShow" class="tab-content">
+      <h1>Remove a Show</h1>
+      <p>
+        Select a show from your library to permanently remove it from your
+        records.
+      </p>
+      <div id="showsDeleteList"></div>
+      <button onclick="showTab('shows')">Back to Menu</button>
+    </div>
+
+    <!-- 6. MOVIES MAIN MENU -->
+    <div id="movies" class="tab-content">
+      <h1>Movies Manager</h1>
+      <nav class="sub-nav">
+        <button onclick="showTab('logMovies')">View Logged Movies</button>
+        <button onclick="showTab('addMovie')">Log New Movie</button>
+        <button onclick="showTab('removeMovie')">Remove a Movie</button>
+      </nav>
+    </div>
+
+    <!-- 7. ADD MOVIE SUB-PANEL -->
+    <div id="addMovie" class="tab-content">
+      <h1>Add a Movie</h1>
+      <input type="text" id="movieName" placeholder="Movie Name" />
+      <input
+        type="text"
+        id="movieTime"
+        placeholder="Duration (e.g., 2h 15m or 135 mins)"
+      />
+      <input type="date" id="movieDate" placeholder="Date Watched" />
+      <button onclick="saveMovie()">Save Movie Entry</button>
+      <button onclick="showTab('movies')">Back to Menu</button>
+    </div>
+
+    <!-- 8. VIEW LOG MOVIES SUB-PANEL -->
+    <div id="logMovies" class="tab-content">
+      <h1>Your Logged Movies</h1>
+      <div id="moviesList"></div>
+      <button onclick="showTab('movies')">Back to Menu</button>
+    </div>
+
+    <!-- 9. REMOVE MOVIE SUB-PANEL -->
+    <div id="removeMovie" class="tab-content">
+      <h1>Remove a Movie</h1>
+      <p>
+        Select a movie from your library to permanently remove it from your
+        records.
+      </p>
+      <div id="moviesDeleteList"></div>
+      <button onclick="showTab('movies')">Back to Menu</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
